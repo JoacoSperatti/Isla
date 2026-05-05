@@ -21,6 +21,8 @@ const FloatingButton = () => {
     <a 
       href="https://www.apparta.co/isla-negra/reservas" 
       className={`reserve-btn ${isVisible ? 'visible' : ''}`}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       Reservar mesa
     </a>

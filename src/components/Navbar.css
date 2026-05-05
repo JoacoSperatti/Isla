@@ -34,6 +34,7 @@
 .desktop-nav {
     display: none;
     gap: 30px;
+    align-items: center;
 }
 
 .desktop-nav a {
@@ -63,6 +64,33 @@
 
 .desktop-nav a:hover::after {
     width: 100%;
+}
+
+/* LANG SWITCHER DESKTOP */
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+}
+
+.lang-switcher button {
+    background: transparent;
+    border: none;
+    color: var(--neutral);
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 5px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.lang-switcher button.active,
+.lang-switcher button:hover {
+    opacity: 1;
+    color: var(--accent);
 }
 
 /* HAMBURGER TOGGLE */
@@ -153,6 +181,27 @@
 }
 
 .menu-links a:hover {
+    color: var(--accent);
+}
+
+.lang-switcher-mobile {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.lang-switcher-mobile button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--neutral);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.lang-switcher-mobile button.active {
+    border-color: var(--accent);
     color: var(--accent);
 }
 

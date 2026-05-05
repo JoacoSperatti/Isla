@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Navbar.css';
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,7 +26,6 @@ const Navbar = () => {
     if (path === '#contacto') {
       const footer = document.querySelector('footer');
       if (footer) {
-        // Usamos una posición ajustada para que el scroll se sienta mejor
         const offset = footer.offsetTop;
         window.scrollTo({
           top: offset,
@@ -35,6 +36,11 @@ const Navbar = () => {
       navigate(path);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setIsOpen(false);
   };
 
   return (
@@ -49,12 +55,18 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <nav className="desktop-nav">
-            <Link to="/" onClick={(e) => handleLinkClick(e, '/')}>Inicio</Link>
-            <Link to="/menu" onClick={(e) => handleLinkClick(e, '/menu')}>Menú</Link>
-            <Link to="/about" onClick={(e) => handleLinkClick(e, '/about')}>Sobre nosotros</Link>
-            <Link to="/events" onClick={(e) => handleLinkClick(e, '/events')}>Eventos</Link>
-            <Link to="/gallery" onClick={(e) => handleLinkClick(e, '/gallery')}>Galería</Link>
-            <a href="#contacto" onClick={(e) => handleLinkClick(e, '#contacto')}>Contacto</a>
+            <Link to="/" onClick={(e) => handleLinkClick(e, '/')}>{t('navbar.home')}</Link>
+            <Link to="/menu" onClick={(e) => handleLinkClick(e, '/menu')}>{t('navbar.menu')}</Link>
+            <Link to="/about" onClick={(e) => handleLinkClick(e, '/about')}>{t('navbar.about')}</Link>
+            <Link to="/events" onClick={(e) => handleLinkClick(e, '/events')}>{t('navbar.events')}</Link>
+            <Link to="/gallery" onClick={(e) => handleLinkClick(e, '/gallery')}>{t('navbar.gallery')}</Link>
+            <a href="#contacto" onClick={(e) => handleLinkClick(e, '#contacto')}>{t('navbar.contact')}</a>
+            
+            <div className="lang-switcher">
+              <button onClick={() => changeLanguage('es')} className={i18n.language === 'es' ? 'active' : ''}>ES</button>
+              <button onClick={() => changeLanguage('en')} className={i18n.language === 'en' ? 'active' : ''}>EN</button>
+              <button onClick={() => changeLanguage('pt')} className={i18n.language === 'pt' ? 'active' : ''}>PT</button>
+            </div>
           </nav>
 
           <button 
@@ -76,20 +88,29 @@ const Navbar = () => {
           <button className="close-btn" onClick={toggleMenu}>✕</button>
         </div>
 
-        <div className="menu-divider"></div>
-
         <div className="menu-links">
-          <a href="/" onClick={(e) => handleLinkClick(e, '/')}>Inicio</a>
-          <a href="/menu" onClick={(e) => handleLinkClick(e, '/menu')}>Menú</a>
-          <a href="/about" onClick={(e) => handleLinkClick(e, '/about')}>Sobre nosotros</a>
-          <a href="/events" onClick={(e) => handleLinkClick(e, '/events')}>Eventos</a>
-          <a href="/gallery" onClick={(e) => handleLinkClick(e, '/gallery')}>Galería</a>
-          <a href="#contacto" onClick={(e) => handleLinkClick(e, '#contacto')}>Contacto</a>
+          <a href="/" onClick={(e) => handleLinkClick(e, '/')}>{t('navbar.home')}</a>
+          <a href="/menu" onClick={(e) => handleLinkClick(e, '/menu')}>{t('navbar.menu')}</a>
+          <a href="/about" onClick={(e) => handleLinkClick(e, '/about')}>{t('navbar.about')}</a>
+          <a href="/events" onClick={(e) => handleLinkClick(e, '/events')}>{t('navbar.events')}</a>
+          <a href="/gallery" onClick={(e) => handleLinkClick(e, '/gallery')}>{t('navbar.gallery')}</a>
+          <a href="#contacto" onClick={(e) => handleLinkClick(e, '#contacto')}>{t('navbar.contact')}</a>
+        </div>
+
+        <div className="lang-switcher-mobile">
+          <button onClick={() => changeLanguage('es')} className={i18n.language === 'es' ? 'active' : ''}>Español</button>
+          <button onClick={() => changeLanguage('en')} className={i18n.language === 'en' ? 'active' : ''}>English</button>
+          <button onClick={() => changeLanguage('pt')} className={i18n.language === 'pt' ? 'active' : ''}>Português</button>
         </div>
 
         <div className="menu-cta">
-          <a href="https://www.apparta.co/isla-negra/reservas" className="btn">
-            Reservar mesa
+          <a 
+            href="https://www.apparta.co/isla-negra/reservas" 
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t('navbar.reserve')}
           </a>
         </div>
       </nav>

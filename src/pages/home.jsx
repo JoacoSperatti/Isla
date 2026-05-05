@@ -1,12 +1,15 @@
+import { useTranslation } from 'react-i18next';
 import Hero from '../components/Hero';
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <main>
       <Hero />
       
       <section id="sobre" className="section">
-        <h2>Así se vive Isla Negra</h2>
+        <h2>{t('home.experience')}</h2>
         {/* Usamos preload="metadata" como tenías en tu JS */}
         <video autoPlay muted loop playsInline className="video-full" preload="metadata">
           <source src="/media/videos/terraza.mp4" type="video/mp4" />
@@ -14,13 +17,20 @@ const Home = () => {
       </section>
 
       <section id="menu" className="section">
-        <h2>Sabores del litoral</h2>
-        <p>Pescados de río, pastas caseras y coctelería.</p>
+        <h2>{t('home.flavors_title')}</h2>
+        <p>{t('home.flavors_desc')}</p>
       </section>
 
       <section id="reservas" className="section">
-        <h2>Reservas limitadas</h2>
-        <a className="btn" href="https://www.apparta.co/isla-negra/reservas">Quiero mi mesa</a>
+        <h2>{t('home.reservations_title')}</h2>
+        <a 
+          className="btn" 
+          href="https://www.apparta.co/isla-negra/reservas"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t('home.reservations_cta')}
+        </a>
       </section>
     </main>
   );

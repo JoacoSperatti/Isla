@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa';
+import Footer from './components/Footer';
+import LanguageModal from './components/LanguageModal';
 
 // Páginas
 import Home from './pages/home';
@@ -11,9 +13,26 @@ import Gallery from './pages/gallery';
 import Contact from './pages/contact';
 
 function App() {
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+
+  useEffect(() => {
+    // Verificamos si ya se eligió idioma antes
+    const languageSelected = localStorage.getItem('languageSelected');
+    if (!languageSelected) {
+      setShowLanguageModal(true);
+    }
+  }, []);
+
+  const handleLanguageSelect = () => {
+    setShowLanguageModal(false);
+    localStorage.setItem('languageSelected', 'true');
+  };
+
   return (
     <Router>
       <div className="App">
+        {showLanguageModal && <LanguageModal onSelect={handleLanguageSelect} />}
+        <h1 className="sr-only">Isla Negra - Restaurante de Autor en Palermo</h1>
         <Navbar />
         
         {/* Aquí se renderiza el contenido según la URL */}
@@ -26,31 +45,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
 
-        <footer id="contacto" className="footer-minimal">
-          <div className="footer-container">
-            <div className="social-links-minimal">
-              <a href="#" aria-label="Instagram"><FaInstagram /></a>
-              <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-              <a href="#" aria-label="WhatsApp"><FaWhatsapp /></a>
-            </div>
-
-            <div className="contact-line">
-              <span>Calle Falsa 123, CABA</span>
-              <span className="separator">•</span>
-              <span>+54 11 1234-5678</span>
-              <span className="separator">•</span>
-              <span>hola@islanegra.com.ar</span>
-            </div>
-
-            <div className="hours-line">
-              Martes a Sábado 12:00 — 00:00 • Domingos 12:00 — 18:00
-            </div>
-
-            <div className="footer-credits">
-              <p>© 2026 Isla Negra — Un paréntesis necesario en Palermo</p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </Router>
   );

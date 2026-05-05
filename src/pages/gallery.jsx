@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 const Gallery = () => {
+  const { t } = useTranslation();
+
   return (
     <main style={{ paddingTop: '100px' }}>
       <section className="section">
-        <h2>Galería</h2>
-        <p>Explora la belleza de Isla Negra a través de nuestras imágenes.</p>
+        <h2>{t('gallery.title')}</h2>
+        <p>{t('gallery.description')}</p>
       </section>
     </main>
   );

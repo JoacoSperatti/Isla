@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Hero.css';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [isSticky, setIsSticky] = useState(false);
   const [isAtFooter, setIsAtFooter] = useState(false);
   const buttonRef = useRef(null);
@@ -47,14 +49,16 @@ const Hero = () => {
       </video>
 
       <div className="hero-content">
-        <h1>Un paréntesis en Palermo 🍷🔥</h1>
-        <p>Bajá un cambio, viví Isla Negra.</p>
+        <h1>{t('hero.title')}</h1>
+        <p>{t('hero.subtitle')}</p>
         <a 
           ref={buttonRef}
           className={`btn ${isSticky ? 'btn-sticky' : ''} ${isAtFooter ? 'at-footer' : ''}`} 
           href="https://www.apparta.co/isla-negra/reservas"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Reservar mesa
+          {t('hero.cta')}
         </a>
       </div>
     </section>
