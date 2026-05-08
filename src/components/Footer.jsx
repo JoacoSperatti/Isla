@@ -35,7 +35,7 @@ const Footer = () => {
             <FaWhatsapp />
           </a>
           <a 
-            href="https://www.google.com/maps/search/?api=1&query=Gurruchaga+1450%2C+Palermo+Soho" 
+            href="https://maps.app.goo.gl/hgS5kJshSiSgYxQC7?g_st=aw" 
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="Google Maps"
