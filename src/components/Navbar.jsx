@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Navbar.css';
 
@@ -7,7 +7,6 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

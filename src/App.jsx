@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LanguageModal from './components/LanguageModal';
@@ -13,15 +13,10 @@ import Gallery from './pages/gallery';
 import Contact from './pages/contact';
 
 function App() {
-  const [showLanguageModal, setShowLanguageModal] = useState(false);
-
-  useEffect(() => {
-    // Verificamos si ya se eligió idioma antes
-    const languageSelected = localStorage.getItem('languageSelected');
-    if (!languageSelected) {
-      setShowLanguageModal(true);
-    }
-  }, []);
+  const [showLanguageModal, setShowLanguageModal] = useState(() => {
+    // Verificamos si ya se eligió idioma antes directamente en el estado inicial
+    return !localStorage.getItem('languageSelected');
+  });
 
   const handleLanguageSelect = () => {
     setShowLanguageModal(false);

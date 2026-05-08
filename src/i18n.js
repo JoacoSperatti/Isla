@@ -46,7 +46,20 @@ const resources = {
       },
       menu_page: {
         title: "Menú",
-        description: "Descubre nuestra deliciosa carta."
+        description: "Descubre nuestra deliciosa carta.",
+        title_featured: "MENÚ DESTACADO",
+        full_menu_title: "CARTA COMPLETA",
+        river_flavors: "SABORES DEL RÍO",
+        river_desc: "Surubí · Boga · Pacú · Dorado",
+        pastas: "PASTAS & RISOTTOS",
+        pastas_desc: "Pastas artesanales de autor y risottos de mar",
+        meats: "CARNES",
+        meats_desc: "Cortes magros y carnes blancas",
+        salads: "ENSALADAS",
+        salads_desc: "Opciones veganas con ingredientes seleccionados, proteína de río y variedad de vegetales asados",
+        cocktails: "COCTELERÍA",
+        cocktails_desc: "Coctelería de autor inspirada en sabores del litoral entrerriano ",
+        discover_full: "“Descubrí toda la experiencia Isla Negra.”"
       },
       events: {
         title: "Eventos",
@@ -109,7 +122,20 @@ const resources = {
       },
       menu_page: {
         title: "Menu",
-        description: "Discover our delicious menu."
+        description: "Discover our delicious menu.",
+        title_featured: "FEATURED MENU",
+        full_menu_title: "COMPLETE MENU",
+        river_flavors: "FLAVORS OF THE RIVER",
+        river_desc: "Surubí · Boga · Pacú · Dorado",
+        pastas: "PASTAS & RISOTTOS",
+        pastas_desc: "Handmade signature pastas and seafood risottos",
+        meats: "MEATS",
+        meats_desc: "Lean cuts and white meats",
+        salads: "SALADS",
+        salads_desc: "Vegan options with selected ingredients, river protein and a variety of roasted vegetables",
+        cocktails: "COCKTAIL BAR",
+        cocktails_desc: "Signature cocktails inspired by the flavors of the Entre Ríos coast",
+        discover_full: "“Discover the entire Isla Negra experience.”"
       },
       events: {
         title: "Events",
@@ -172,7 +198,20 @@ const resources = {
       },
       menu_page: {
         title: "Cardápio",
-        description: "Descubra o nosso delicioso cardápio."
+        description: "Descubra o nosso delicioso cardápio.",
+        title_featured: "CARDÁPIO EM DESTAQUE",
+        full_menu_title: "CARDÁPIO COMPLETO",
+        river_flavors: "SABORES DO RIO",
+        river_desc: "Surubí · Boga · Pacú · Dorado",
+        pastas: "MASSAS E RISOTOS",
+        pastas_desc: "Massas artesanais exclusivas e risotos de frutos do mar.",
+        meats: "CARNES",
+        meats_desc: "Cortes magros e carnes brancas",
+        salads: "SALADAS",
+        salads_desc: "Opções veganas com ingredientes selecionados, proteína de rio e uma variedade de vegetais assados",
+        cocktails: "COQUETELARIA",
+        cocktails_desc: "Coquetéis exclusivos inspirados nos sabores da costa de Entre Ríos",
+        discover_full: "“Descubra toda a experiência Isla Negra.”"
       },
       events: {
         title: "Eventos",
