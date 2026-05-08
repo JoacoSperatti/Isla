@@ -17,7 +17,7 @@ const Menu = () => {
     },
     {
       title: t('menu_page.meats'),
-      image: "/media/images/salon1.jpg", 
+      image: "/media/images/carne.jpg", 
       description: t('menu_page.meats_desc')
     },
     {
