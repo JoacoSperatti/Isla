@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { SiGooglemaps } from "react-icons/si";
 import "./Footer.css";
 
 const Footer = () => {
@@ -9,14 +10,37 @@ const Footer = () => {
     <footer id="contacto" className="footer-minimal">
       <div className="footer-container">
         <div className="social-links-minimal">
-          <a href="https://www.instagram.com/islanegraresto/" aria-label="Instagram">
+          <a 
+            href="https://www.instagram.com/islanegraresto/" 
+            aria-label="Instagram"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <FaInstagram />
           </a>
-          <a href="https://www.facebook.com/people/Isla-Negra-Restaurante/61587087786945/?ref=PROFILE_EDIT_xav_ig_profile_page_web" aria-label="Facebook">
+          <a 
+            href="https://www.facebook.com/people/Isla-Negra-Restaurante/61587087786945/?ref=PROFILE_EDIT_xav_ig_profile_page_web" 
+            aria-label="Facebook"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <FaFacebookF />
           </a>
-          <a href="https://wa.me/5491124904320" aria-label="WhatsApp">
+          <a 
+            href="https://wa.me/5491124904320" 
+            aria-label="WhatsApp"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             <FaWhatsapp />
+          </a>
+          <a 
+            href="https://www.google.com/maps/search/?api=1&query=Gurruchaga+1450%2C+Palermo+Soho" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="Google Maps"
+          >
+            <SiGooglemaps />
           </a>
         </div>
 
