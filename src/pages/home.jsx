@@ -18,7 +18,7 @@ const Home = () => {
 
       <section id="menu" className="section">
         <h2>{t('home.flavors_title')}</h2>
-        <p>{t('home.flavors_desc')}</p>
+        <p className="home-description">{t('home.flavors_desc')}</p>
       </section>
 
       <section id="reservas" className="section">

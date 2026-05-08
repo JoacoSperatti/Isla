@@ -59,6 +59,16 @@ a {
   text-align: center;
 }
 
+.home-description {
+  white-space: pre-line;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--neutral);
+  opacity: 0.9;
+}
+
 .btn {
   display: inline-block;
   padding: 12px 32px;

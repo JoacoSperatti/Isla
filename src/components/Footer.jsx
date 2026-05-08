@@ -35,6 +35,17 @@ const Footer = () => {
 
         <div className="footer-credits">
           <p>© 2026 Isla Negra — {t("footer.description")}</p>
+          <p className="developer-credit">
+            {t("footer.developed_by")}{" "}
+            <a 
+              href="https://portafolio-joaquinsperatti.vercel.app/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="developer-link"
+            >
+              Joaquín Speratti
+            </a>
+          </p>
         </div>
       </div>
     </footer>

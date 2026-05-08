@@ -1,22 +1,27 @@
 import { useTranslation } from 'react-i18next';
-import Carousel from '../components/Carousel';
-import heroImg from '../assets/hero.png';
+import './events.css';
 
 const Events = () => {
   const { t } = useTranslation();
 
-  const images = [
-    '/media/images/salon1.jpg',
-    '/media/images/salon2.jpg',
-    heroImg
-  ];
-
   return (
     <main style={{ paddingTop: '100px' }}>
-      <section className="section">
+      <section className="section events-container">
         <h2>{t('events.title')}</h2>
         <p>{t('events.description')}</p>
-        <Carousel images={images} />
+        
+        <div className="events-video-wrapper">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="events-video" 
+            preload="metadata"
+          >
+            <source src="/media/videos/terraza.mp4" type="video/mp4" />
+          </video>
+        </div>
       </section>
     </main>
   );
